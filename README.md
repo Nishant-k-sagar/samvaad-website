@@ -1,3 +1,1 @@
-# Samvaad - The literary and Quizzing society of IIITDM Jabalpur
-
----
+ # Samvaad - The literary and Quizzing society of IIITDM Jabalpur
