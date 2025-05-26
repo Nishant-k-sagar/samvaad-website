@@ -13,11 +13,11 @@ const MainLayout: React.FC = () => {
   };
 
   return (
-    <div className="app-container">
+    <div className="flex flex-col min-h-screen">
       <Header toggleSidebar={toggleSidebar} />
-      <div className="content-wrapper">
+      <div className="flex flex-1 mt-0">
         <Sidebar isOpen={sidebarOpen} />
-        <main className="main-content">
+        <main className="flex-1 py-8">
           <Outlet />
         </main>
       </div>
