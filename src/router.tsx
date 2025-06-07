@@ -5,7 +5,7 @@ import About from './pages/About';
 import Events from './pages/Events';
 import Gallery from './pages/Gallery';
 import Members from './pages/Members';
-import Contact from './pages/Contact';
+import ConnectWith from './pages/ConnectWith';
 
 const router = createBrowserRouter([
   {
@@ -33,8 +33,8 @@ const router = createBrowserRouter([
         element: <Members />
       },
       {
-        path: 'contact',
-        element: <Contact />
+        path: 'ConnectWith',
+        element: <ConnectWith />
       }
     ]
   }
