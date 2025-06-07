@@ -5,31 +5,31 @@ const Members: React.FC = () => {
   const coreTeam: TeamMember[] = [
     {
       id: 1,
-      name: 'Priya Sharma',
-      role: 'President',
+      name: 'Pranav Goenka',
+      role: 'Coordinator',
       image: '/images/team/member1.jpg',
-      bio: 'Priya is a passionate cultural advocate with 5 years of experience in organizing cultural events.'
+      bio: 'lorem ipsum dolor sit amet'
     },
     {
       id: 2,
-      name: 'Rahul Verma',
-      role: 'Vice President',
+      name: 'Vansh',
+      role: 'Co Coordinator',
       image: '/images/team/member2.jpg',
-      bio: 'Rahul is a literature enthusiast who brings creative ideas to our events and activities.'
+      bio: 'lorem ipsum dolor sit amet'
     },
     {
       id: 3,
-      name: 'Ananya Patel',
-      role: 'Cultural Secretary',
+      name: 'Mariam Iqbal',
+      role: 'Co Coordinator',
       image: '/images/team/member3.jpg',
-      bio: 'Ananya is a classical dancer who manages our performance events and workshops.'
+      bio: 'lorem ipsum dolor sit amet'
     },
     {
       id: 4,
-      name: 'Vikram Singh',
-      role: 'Treasurer',
+      name: 'Meghana R. Callur',
+      role: 'Content Team Head',
       image: '/images/team/member4.jpg',
-      bio: 'Vikram handles the financial aspects of our club and ensures smooth operations.'
+      bio: 'orem ipsum dolor sit amet'
     }
   ];
   
@@ -61,27 +61,31 @@ const Members: React.FC = () => {
   ];
 
   return (
-    <div className="members-page">
-      <section className="page-header">
-        <div className="container">
-          <h1>Our Team</h1>
-          <p>Meet the passionate individuals behind Samvaad Cultural Club</p>
+    <div>
+      <section className="bg-gray-200 py-16 mb-12 text-center mt-[-70px] flex justify-center items-center h-70">
+        <div className="w-[90%] max-w-7xl mx-auto px-4">
+          <h1 className="text-4xl font-bold mb-2 text-gray-900">Our Team</h1>
+          <p className="text-lg">Meet the passionate individuals behind Samvaad Cultural Club</p>
         </div>
       </section>
       
-      <section className="core-team">
-        <div className="container">
-          <h2>Core Team</h2>
-          <div className="team-grid">
+      <section className="py-12">
+        <div className="w-[90%] max-w-7xl mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-8">Core Team</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {coreTeam.map(member => (
-              <div key={member.id} className="team-member">
-                <div className="member-image">
-                  <img src={member.image} alt={member.name} />
+              <div key={member.id} className="flex flex-col h-full bg-white rounded shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md hover:-translate-y-[5px]">
+                <div className="h-[250px] overflow-hidden">
+                  <img 
+                    src={member.image} 
+                    alt={member.name} 
+                    className="w-full h-full object-cover" 
+                  />
                 </div>
-                <div className="member-info">
-                  <h3>{member.name}</h3>
-                  <p className="member-role">{member.role}</p>
-                  <p className="member-bio">{member.bio}</p>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold mb-2">{member.name}</h3>
+                  <p className="text-gray-500 mb-2">{member.role}</p>
+                  <p className="leading-relaxed">{member.bio}</p>
                 </div>
               </div>
             ))}
@@ -89,26 +93,30 @@ const Members: React.FC = () => {
         </div>
       </section>
       
-      <section className="volunteers">
-        <div className="container">
-          <h2>Our Volunteers</h2>
-          <div className="volunteers-grid">
+      <section className="py-12">
+        <div className="w-[90%] max-w-7xl mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-8">Our Volunteers</h2>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-6">
             {volunteers.map(volunteer => (
-              <div key={volunteer.id} className="volunteer-card">
-                <img src={volunteer.image} alt={volunteer.name} />
-                <h3>{volunteer.name}</h3>
-                <p>{volunteer.role}</p>
+              <div key={volunteer.id} className="text-center ">
+                <img 
+                  src={volunteer.image} 
+                  alt={volunteer.name} 
+                  className="w-[120px] h-[120px] rounded-full object-cover mx-auto mb-2" 
+                />
+                <h3 className="text-lg font-semibold">{volunteer.name}</h3>
+                <p className="text-gray-500">{volunteer.role}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
       
-      <section className="join-team">
-        <div className="container">
-          <h2>Join Our Team</h2>
-          <p>Interested in volunteering with Samvaad? We're always looking for passionate individuals to join our team.</p>
-          <button className="cta-button">Apply to Volunteer</button>
+      <section className="py-12 bg-secondary-light text-center">
+        <div className="w-[90%] max-w-7xl mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-4">Join Our Team</h2>
+          <p className="mb-6">Interested in volunteering with Samvaad? We're always looking for passionate individuals to join our team.</p>
+          <button className="bg-primary text-white py-2 px-4 rounded font-medium transition-all duration-300 hover:bg-primary-dark hover:-translate-y-0.5">Apply to Volunteer</button>
         </div>
       </section>
     </div>

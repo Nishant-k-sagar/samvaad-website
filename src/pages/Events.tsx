@@ -7,6 +7,7 @@ type CategoryFilter = 'all' | 'festival' | 'literature' | 'workshop' | 'exhibiti
 
 const Events: React.FC = () => {
   const [filter, setFilter] = useState<CategoryFilter>('all');
+  const [hoveredButton, setHoveredButton] = useState<CategoryFilter | null>(null);
   
   // Mock data for events
   const allEvents: Event[] = [
@@ -48,58 +49,78 @@ const Events: React.FC = () => {
     ? allEvents 
     : allEvents.filter(event => event.category === filter);
   
+  const getButtonClass = (buttonType: CategoryFilter) => {
+    if (filter === buttonType) {
+      return 'bg-gray-200 text-black shadow-md';
+    } else if (hoveredButton === buttonType) {
+      return 'bg-gray-200 border border-gray-300 shadow-sm';
+    } else {
+      return 'bg-transparent border border-gray-300 hover:bg-gray-100';
+    }
+  };
+
   return (
-    <div className="events-page">
-      <section className="page-header">
-        <div className="container">
-          <h1>Events</h1>
-          <p>Discover our upcoming and past cultural events</p>
+    <div>
+      <section className="bg-gray-200 py-16 mb-12 text-center mt-[-70px] flex justify-center items-center h-70">
+        <div className="w-[90%] max-w-7xl mx-auto px-4">
+          <h1 className="text-4xl font-bold mb-2 text-gray-900">Events</h1>
+          <p className="text-lg">Discover our upcoming and past cultural events</p>
         </div>
       </section>
       
-      <section className="events-content">
-        <div className="container">
-          <div className="events-filter">
+      <section className="py-12">
+        <div className="w-[90%] max-w-7xl mx-auto px-4">
+          <div className="flex flex-wrap gap-4 mb-8 justify-center">
             <button 
-              className={filter === 'all' ? 'active' : ''} 
+              className={`py-2 px-4 rounded font-medium transition-all duration-300 ${getButtonClass('all')}`}
               onClick={() => setFilter('all')}
+              onMouseEnter={() => setHoveredButton('all')}
+              onMouseLeave={() => setHoveredButton(null)}
             >
               All Events
             </button>
             <button 
-              className={filter === 'festival' ? 'active' : ''} 
+              className={`py-2 px-4 rounded font-medium transition-all duration-300 ${getButtonClass('festival')}`}
               onClick={() => setFilter('festival')}
+              onMouseEnter={() => setHoveredButton('festival')}
+              onMouseLeave={() => setHoveredButton(null)}
             >
               Festivals
             </button>
             <button 
-              className={filter === 'workshop' ? 'active' : ''} 
+              className={`py-2 px-4 rounded font-medium transition-all duration-300 ${getButtonClass('workshop')}`}
               onClick={() => setFilter('workshop')}
+              onMouseEnter={() => setHoveredButton('workshop')}
+              onMouseLeave={() => setHoveredButton(null)}
             >
               Workshops
             </button>
             <button 
-              className={filter === 'literature' ? 'active' : ''} 
+              className={`py-2 px-4 rounded font-medium transition-all duration-300 ${getButtonClass('literature')}`}
               onClick={() => setFilter('literature')}
+              onMouseEnter={() => setHoveredButton('literature')}
+              onMouseLeave={() => setHoveredButton(null)}
             >
               Literary Events
             </button>
             <button 
-              className={filter === 'exhibition' ? 'active' : ''} 
+              className={`py-2 px-4 rounded font-medium transition-all duration-300 ${getButtonClass('exhibition')}`}
               onClick={() => setFilter('exhibition')}
+              onMouseEnter={() => setHoveredButton('exhibition')}
+              onMouseLeave={() => setHoveredButton(null)}
             >
               Exhibitions
             </button>
           </div>
           
-          <div className="events-grid">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-6">
             {filteredEvents.map(event => (
               <EventCard key={event.id} event={event} />
             ))}
           </div>
           
           {filteredEvents.length === 0 && (
-            <p className="no-events">No events found in this category.</p>
+            <p className="text-gray-500 text-center py-8">No events found in this category.</p>
           )}
         </div>
       </section>
