@@ -13,7 +13,7 @@ const EventCard: React.FC<EventCardProps> = ({ event }) => {
         <img 
           src={event.image} 
           alt={event.title} 
-          className="w-full h-full object-cover transition-all duration-300 group-hover:scale-105" 
+          className="w-full h-full object-cover transition-all duration-300 group-hover:scale-110" 
         />
       </div>
       <div className="p-6 flex-grow flex flex-col">
