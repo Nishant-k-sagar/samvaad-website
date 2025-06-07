@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import EventCard from '../ components/common/EventCard';
+import EventCard from '../components/common/EventCard';
 
 import type { Event } from '../types';
 

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import EventCard from '../ components/common/EventCard';
+import EventCard from '../components/common/EventCard';
 import type { Event } from '../types';
 
 const Home: React.FC = () => {
