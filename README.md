@@ -1,6 +1,7 @@
 # Samvaad - The Literary and Quizzing Society of IIITDM Jabalpur
 
-This is the official repository for the Samvaad website.
+This is the official repository for the Samvaad website.  
+Custom built content management system which is powering the website as backend : https://github.com/Nishant-k-sagar/samvaad-cms
 
 ## About Samvaad
 
